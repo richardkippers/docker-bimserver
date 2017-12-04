@@ -1,6 +1,6 @@
 # docker-bimserver
 
-Dockerfile based on [jenca/docker-bimserver](https://github.com/jenca-services/docker-bimserver), runs docker 1.5.92 (2017-11-20). 
+Dockerfile based on [jenca/docker-bimserver](https://github.com/jenca-services/docker-bimserver), runs bimserver 1.5.92 (2017-11-20) on Tomcat 8.5.24.
 
 ## Run
 

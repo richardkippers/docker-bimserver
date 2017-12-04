@@ -1,4 +1,4 @@
-# Dockerfile to install BIMserver 1.5.92 on Tomcat 8.0.30
+# Dockerfile to install BIMserver 1.5.92 on Tomcat 8.5.24
 # Based on jenca/docker-bimserver
 
 FROM ubuntu:14.04
@@ -23,10 +23,10 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 RUN mkdir /opt/tomcat
 RUN groupadd tomcat
 RUN useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
-RUN wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.3/bin/apache-tomcat-8.0.3.tar.gz \
-	-O /tmp/apache-tomcat-8.0.30.tar.gz
-RUN tar xvf /tmp/apache-tomcat-8.0.30.tar.gz -C /opt/tomcat --strip-components=1
-RUN rm -f /tmp/apache-tomcat-8.0.30.tar.gz
+RUN wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.5.24/bin/apache-tomcat-8.5.24.tar.gz \
+	-O /tmp/apache-tomcat-8.5.24.tar.gz
+RUN tar xvf /tmp/apache-tomcat-8.5.24.tar.gz -C /opt/tomcat --strip-components=1
+RUN rm -f /tmp/apache-tomcat-8.5.24.tar.gz
 
 # Set permissions for group and user to install BIMserver and edit conf
 
@@ -52,7 +52,6 @@ ENV CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
 
 ADD ./web.xml /opt/tomcat/webapps/manager/WEB-INF/web.xml
 ADD ./run.sh /opt/run.sh
-
 
 # Run application
 

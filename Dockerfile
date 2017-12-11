@@ -12,11 +12,10 @@ RUN apt-get -y update && apt-get -y install \
 	openjdk-8-jdk \
 	git \
 	ant \
-	wget
+	wget \
+	nano
 RUN echo "Europe/Amsterdam" > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
-
-# Installation
 
 # Create Tomcat root directory, set up users and install Tomcat
 

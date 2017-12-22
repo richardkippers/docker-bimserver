@@ -22,10 +22,11 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 RUN mkdir /opt/tomcat
 RUN groupadd tomcat
 RUN useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
-RUN wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.5.24/bin/apache-tomcat-8.5.24.tar.gz \
-	-O /tmp/apache-tomcat-8.5.24.tar.gz
-RUN tar xvf /tmp/apache-tomcat-8.5.24.tar.gz -C /opt/tomcat --strip-components=1
-RUN rm -f /tmp/apache-tomcat-8.5.24.tar.gz
+RUN wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.44/bin/apache-tomcat-8.0.44.tar.gz \
+	-O /tmp/apache-tomcat-8.0.44.tar.gz
+RUN tar xvf /tmp/apache-tomcat-8.0.44.tar.gz -C /opt/tomcat --strip-components=1
+RUN rm -f /tmp/apache-tomcat-8.0.44.tar.gz
+
 
 # Set permissions for group and user to install BIMserver and edit conf
 
